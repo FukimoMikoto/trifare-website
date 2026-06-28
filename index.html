@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TriFare Experience V2 — Digital Fare Meter</title>
+  <meta name="description" content="TriFare is a GPS-powered digital fare meter, applicant onboarding, custom ride, trip recovery, and admin analytics system for TODA operations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-glow"></div>
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="TriFare Home">
+      <img src="assets/logos/trifare_logo.png" alt="TriFare logo" class="brand-logo" />
+      <span><strong>TriFare</strong><small>Digital Fare Meter</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#driver">Drivers</a>
+      <a href="#admin">Admins</a>
+      <a href="#applicant">Applicants</a>
+      <a href="#calculator">Calculator</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost" href="#screens">View Screens</a>
+      <a class="btn primary" href="https://github.com/FukimoMikoto/trifare-releases/releases/download/v1.0.0/TriFare-v1.0.0.apk"
+        target="_blank"
+        rel="noopener">Download APK</a>
+    </div>
+    <button class="menu" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero section-blue">
+      <div class="route-line"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="badge"><i></i> Built for TODA Operations • Kidapawan City</span>
+          <h1>Modern Digital Fare for Tricycle Operations.</h1>
+          <p>GPS-powered fare computation, trip recovery, custom rides, applicant onboarding, and admin analytics in one seamless platform.</p>
+          <div class="hero-actions">
+            <a class="btn white" href="#driver">Explore Features</a>
+            <a class="btn outline-white" href="#download">Download APK</a>
+          </div>
+          <div class="hero-metrics">
+            <span>GPS Tracking</span><span>Trip Recovery</span><span>PDF / CSV Reports</span>
+          </div>
+        </div>
+        <div class="hero-carousel reveal delay-1" aria-label="TriFare app carousel">
+          <div class="carousel-copy">
+            <span class="carousel-kicker" id="carouselKicker">Driver Workflow</span>
+            <h2 id="carouselTitle">Start, track, and save trips.</h2>
+            <p id="carouselDesc">A clean fare meter interface for passenger handling, GPS tracking, and trip recording.</p>
+          </div>
+
+          <div class="carousel-stage floating-stage">
+            <button class="carousel-btn prev" type="button" aria-label="Previous screen">‹</button>
+
+            <div class="phone-shell carousel-phone side-phone left-phone" data-shift="-1" aria-hidden="true">
+              <img id="heroCarouselPrev" src="assets/screens/add-passenger.png" alt="Previous TriFare screen">
+            </div>
+
+            <div class="phone-shell carousel-phone main-phone">
+              <img id="heroCarouselImage" src="assets/screens/active-trip.png" alt="TriFare active trip screen">
+            </div>
+
+            <div class="phone-shell carousel-phone side-phone right-phone" data-shift="1" aria-hidden="true">
+              <img id="heroCarouselNext" src="assets/screens/end-trip.png" alt="Next TriFare screen">
+            </div>
+
+            <button class="carousel-btn next" type="button" aria-label="Next screen">›</button>
+          </div>
+
+          <div class="carousel-dots" id="heroCarouselDots" aria-label="Carousel navigation"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-bar container reveal">
+      <article><span>01</span><b>Distance-Based Fare</b><p>Fare computation follows base fare plus per-distance excess rules.</p></article>
+      <article><span>02</span><b>Passenger Discounts</b><p>Regular, Student, Senior, PWD, and Child passenger types are supported.</p></article>
+      <article><span>03</span><b>Trip Recovery</b><p>Ongoing trips can be restored after app closure or restart.</p></article>
+      <article><span>04</span><b>Admin Reports</b><p>Generate daily revenue, driver revenue, and trip log reports.</p></article>
+    </section>
+
+    <section id="experience" class="scroll-experience container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Product Experience</span>
+        <h2>One app. Three complete workflows.</h2>
+        <p>Scroll through the actual TriFare experience captured from the Flutter application.</p>
+      </div>
+      <div class="experience-grid">
+        <div class="experience-copy reveal">
+          <div class="story-step active" data-img="login.png"><span>01</span><h3>Secure sign-in</h3><p>Drivers, admins, and applicants access their own role-based interface.</p></div>
+          <div class="story-step" data-img="add-passenger.png"><span>02</span><h3>Add passenger</h3><p>Select passenger category, quantity, and discounts before starting.</p></div>
+          <div class="story-step" data-img="active-trip.png"><span>03</span><h3>Track and compute</h3><p>GPS distance, elapsed time, and fare update during the trip.</p></div>
+          <div class="story-step" data-img="receipt.png"><span>04</span><h3>Save receipt</h3><p>Completed trips are recorded for history, earnings, and reports.</p></div>
+          <div class="story-step" data-img="admin-dashboard.png"><span>05</span><h3>Monitor operations</h3><p>Admins view revenue, drivers, applications, analytics, and reports.</p></div>
+        </div>
+        <div class="sticky-phone reveal delay-1">
+          <div class="phone-shell large"><img id="storyPhone" src="assets/screens/login.png" alt="TriFare app experience"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="driver" class="role-section">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">For Drivers</span>
+          <h2>Every trip starts with one tap.</h2>
+          <p>TriFare keeps the driver workflow simple from passenger selection to trip receipt.</p>
+        </div>
+        <div class="phone-card-grid">
+          <article class="phone-card reveal"><div class="phone-shell mini"><img src="assets/screens/driver-empty.png" alt="Driver home"></div><h3>Fare Meter</h3><p>Monitor GPS status and prepare passenger trips.</p></article>
+          <article class="phone-card reveal delay-1"><div class="phone-shell mini"><img src="assets/screens/add-passenger.png" alt="Add passenger"></div><h3>Passenger Types</h3><p>Built-in fare categories and discount labels.</p></article>
+          <article class="phone-card reveal delay-2"><div class="phone-shell mini"><img src="assets/screens/active-trip.png" alt="Active trip"></div><h3>Live Trip</h3><p>Track distance, time, and current fare in real time.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="recovery-section section-dark">
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow gold">Recovery System</span>
+          <h2>Trips continue even after interruptions.</h2>
+          <p>TriFare restores ongoing metered trips and custom rides after app restarts, helping drivers avoid losing trip progress during pilot testing.</p>
+          <div class="recovery-flow"><span>App closes</span><b>→</b><span>Recover trip</span><b>→</b><span>End safely</span></div>
+        </div>
+        <div class="phone-orbit reveal delay-1">
+          <div class="orbit-ring"></div>
+          <div class="phone-shell"><img src="assets/screens/custom-banner.png" alt="Custom ride in progress"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="custom" class="custom-section container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Custom / Exclusive Ride</span>
+        <h2>Negotiated fares without automatic computation.</h2>
+        <p>Drivers can set an agreed fare for exclusive rides while still recording distance, duration, and trip history.</p>
+      </div>
+      <div class="phone-card-grid two">
+        <article class="phone-card reveal"><div class="phone-shell mini"><img src="assets/screens/custom-form.png" alt="Custom ride form"></div><h3>Set Agreed Fare</h3><p>Enter passenger type, fare, and optional destination.</p></article>
+        <article class="phone-card reveal delay-1"><div class="phone-shell mini"><img src="assets/screens/custom-active.png" alt="Custom ride active"></div><h3>End Custom Ride</h3><p>Save the exact negotiated amount after the ride.</p></article>
+      </div>
+    </section>
+
+    <section id="admin" class="admin-section section-soft">
+      <div class="container split reverse">
+        <div class="admin-panel reveal">
+          <div class="phone-shell dashboard"><img src="assets/screens/admin-analytics.png" alt="Admin analytics"></div>
+          <div class="mini-stat up"><strong>117+</strong><span>Completed Trips</span></div>
+          <div class="mini-stat down"><strong>₱2,492</strong><span>Revenue Recorded</span></div>
+        </div>
+        <div class="reveal delay-1">
+          <span class="eyebrow">For Admins</span>
+          <h2>Operations visibility in one dashboard.</h2>
+          <p>Monitor driver performance, daily revenue, passenger breakdown, applications, and exportable reports.</p>
+          <ul class="checklist">
+            <li>Driver statistics and detail views</li>
+            <li>Applicant review and approval</li>
+            <li>CSV and PDF report exports</li>
+            <li>Daily trip and revenue analytics</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="applicant" class="applicant-section container">
+      <div class="section-heading center reveal">
+        <span class="eyebrow">For Applicants</span>
+        <h2>Driver onboarding made simple.</h2>
+        <p>Applicants can register, submit details, upload documents, and track review status.</p>
+      </div>
+      <div class="journey reveal">
+        <div><span>1</span><b>Register</b><p>Create applicant account.</p></div>
+        <div><span>2</span><b>Apply</b><p>Fill out driver information.</p></div>
+        <div><span>3</span><b>Upload</b><p>Submit documents.</p></div>
+        <div><span>4</span><b>Track</b><p>Wait for admin review.</p></div>
+      </div>
+      <div class="phone-row reveal delay-1">
+        <div class="phone-shell mini"><img src="assets/screens/applicant-register.png" alt="Applicant registration"></div>
+        <div class="phone-shell mini"><img src="assets/screens/application-filled.png" alt="Application form filled"></div>
+        <div class="phone-shell mini"><img src="assets/screens/upload-docs.png" alt="Upload documents"></div>
+        <div class="phone-shell mini"><img src="assets/screens/app-status.png" alt="Application status"></div>
+      </div>
+    </section>
+
+    <section id="screens" class="screens-section section-dark">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow gold">Real App Screens</span>
+          <h2>Explore TriFare by role.</h2>
+          <p>Switch between driver, admin, applicant, and custom ride screens.</p>
+        </div>
+        <div class="screen-tabs reveal">
+          <button class="active" data-gallery="driver">Driver</button>
+          <button data-gallery="admin">Admin</button>
+          <button data-gallery="applicant">Applicant</button>
+          <button data-gallery="custom">Custom Ride</button>
+        </div>
+        <div class="gallery" id="screenGallery"></div>
+      </div>
+    </section>
+
+    <section id="calculator" class="calculator-section container">
+      <div class="calculator-card reveal">
+        <div class="calc-copy">
+          <span class="eyebrow">Interactive Fare Calculator</span>
+          <h2>Try the TriFare formula.</h2>
+          <p>Base fare is ₱15.00 for the first 3.75 km. Excess distance is ₱0.40 per 100 meters, equal to ₱4.00 per kilometer.</p>
+          <label>Distance <b id="distanceLabel">5.00 km</b></label>
+          <input type="range" id="distance" min="0" max="20" value="5" step="0.05">
+          <label>Passenger Type</label>
+          <div class="passenger-options" id="passengerOptions">
+            <button class="active" data-discount="0" data-name="Regular">Regular</button>
+            <button data-discount="0.20" data-name="Student">Student</button>
+            <button data-discount="0.20" data-name="Senior">Senior</button>
+            <button data-discount="0.20" data-name="PWD">PWD</button>
+            <button data-discount="0.30" data-name="Child">Child</button>
+          </div>
+        </div>
+        <div class="fare-panel">
+          <span>Estimated Fare</span>
+          <strong id="fareOutput">₱20.00</strong>
+          <dl>
+            <div><dt>Base Fare</dt><dd>₱15.00</dd></div>
+            <div><dt>Excess Distance</dt><dd id="excessDistance">1.25 km</dd></div>
+            <div><dt>Excess Fare</dt><dd id="excessFare">₱5.00</dd></div>
+            <div><dt>Discount</dt><dd id="discountOutput">₱0.00</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="testing" class="stats-section section-blue">
+      <div class="container stats-grid">
+        <div class="reveal"><span class="eyebrow">Pilot Testing</span><h2>TriFare in numbers.</h2><p>Sample values from the current testing dashboard.</p></div>
+        <article class="stat reveal"><strong data-count="117">0</strong><span>Completed Trips</span></article>
+        <article class="stat reveal delay-1"><strong data-count="56.08">0</strong><span>Tracked Kilometers</span></article>
+        <article class="stat reveal delay-2"><strong data-count="8">0</strong><span>Drivers</span></article>
+        <article class="stat reveal delay-3"><strong data-count="2492.83">0</strong><span>Revenue Recorded</span></article>
+      </div>
+    </section>
+
+    <section id="download" class="cta">
+      <div class="container cta-card reveal">
+        <div><span class="eyebrow">Capstone Showcase</span><h2>Ready to make every trip transparent?</h2><p>TriFare was built as a BSIT capstone system for digital fare computation and operations monitoring.</p></div>
+        <div class="hero-actions"><a href="#" class="btn primary">Download APK</a><a href="#" class="btn ghost">View Documentation</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <a class="brand" href="#top"><img src="assets/logos/trifare_logo.png" alt="TriFare logo" class="brand-logo" /><span><strong>TriFare</strong><small>Digital Fare Meter</small></span></a>
+    <p>GPS-powered fare computation, trip recovery, custom rides, applicant onboarding, and admin analytics for TODA operations.</p>
+    <small>Built as a Capstone Project • Bachelor of Science in Information Technology • Kidapawan City</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
