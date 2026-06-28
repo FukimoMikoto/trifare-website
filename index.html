@@ -3,11 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TriFare Experience V2 — Digital Fare Meter</title>
+
+    <title>TriFare | Digital Fare Meter for Kidapawan City</title>
+
     <meta
       name="description"
-      content="TriFare is a GPS-powered digital fare meter, applicant onboarding, custom ride, trip recovery, and admin analytics system for TODA operations."
+      content="TriFare is a GPS-assisted digital fare meter designed for Kidapawan City tricycle operations. Features include automatic fare computation, passenger management, trip history, custom rides, applicant onboarding, and admin analytics."
     />
+    <meta name="author" content="Bryan James Caralos" />
+    <meta
+      name="keywords"
+      content="TriFare, Digital Fare Meter, Kidapawan City, Tricycle Fare, Flutter, Supabase, GPS Fare Meter, BSIT Capstone Project"
+    />
+
+    <link rel="icon" type="image/png" href="assets/logos/trifare_logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logos/trifare_logo.png" />
+    <link rel="shortcut icon" href="assets/logos/trifare_logo.png" />
+    <link rel="apple-touch-icon" href="assets/logos/trifare_logo.png" />
+
+    <link rel="canonical" href="https://fukimomikoto.github.io/trifare-website/" />
+    <meta name="theme-color" content="#0b66d8" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TriFare | Digital Fare Meter" />
+    <meta property="og:description" content="A GPS-assisted digital fare meter for Kidapawan City tricycle operations." />
+    <meta property="og:image" content="https://fukimomikoto.github.io/trifare-website/assets/hero-preview.png" />
+    <meta property="og:url" content="https://fukimomikoto.github.io/trifare-website/" />
+    <meta property="og:site_name" content="TriFare" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TriFare | Digital Fare Meter" />
+    <meta name="twitter:description" content="GPS-assisted digital fare meter for Kidapawan City tricycle operations." />
+    <meta name="twitter:image" content="https://fukimomikoto.github.io/trifare-website/assets/hero-preview.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -519,7 +549,7 @@
 
       <section id="download" class="cta">
         <div class="container cta-card reveal">
-          <div>
+          <div class="cta-copy">
             <span class="eyebrow">Capstone Showcase</span>
             <h2>Ready to make every trip transparent?</h2>
             <p>
@@ -527,65 +557,74 @@
               computation and operations monitoring.
             </p>
           </div>
-          <div class="hero-actions">
-            <a href="#" class="btn primary">Download APK</a
-            ><a
-              href="https://github.com/FukimoMikoto/trifare-releases/releases/download/v1.0.0/TriFare-v1.0.0.apk"
-              class="btn primary"
-              target="_blank"
-              rel="noopener"
-            >
-              Download APK
-            </a>
+
+          <div class="download-panel">
+            <div class="hero-actions">
+              <a
+                href="https://github.com/FukimoMikoto/trifare-releases/releases/download/v1.0.0/TriFare-v1.0.0.apk"
+                class="btn primary"
+                target="_blank"
+                rel="noopener"
+              >
+                Download APK
+              </a>
+
+              <a
+                href="https://github.com/FukimoMikoto/trifare-releases"
+                class="btn ghost"
+                target="_blank"
+                rel="noopener"
+              >
+                View Releases
+              </a>
+            </div>
+
+            <div class="qr-card">
+              <img
+                src="assets/qr/trifare-download-qr.png"
+                alt="TriFare download QR code"
+              />
+              <div>
+                <strong>Scan to Download</strong>
+                <p>Open the TriFare website and install the latest Android APK.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <div class="qr-card">
-    <img src="assets/qr/trifare-download-qr.png" alt="TriFare download QR code">
-    <div>
-      <strong>Scan to Download</strong>
-        <p>Open the TriFare website and install the latest Android APK.</p>
-      </div>
-    </div>
     </main>
 
     <footer class="footer container">
-      <a class="brand" href="#top"
-        ><img
+      <a class="brand" href="#top">
+        <img
           src="assets/logos/trifare_logo.png"
           alt="TriFare logo"
           class="brand-logo"
-        /><footer class="footer container">
-  <a class="brand" href="#top">
-    <img
-      src="assets/logos/trifare_logo.png"
-      alt="TriFare logo"
-      class="brand-logo"
-    />
-    <span>
-      <strong>TriFare</strong>
-      <small>Digital Fare Meter</small>
-    </span>
-  </a>
+        />
+        <span>
+          <strong>TriFare</strong>
+          <small>Digital Fare Meter</small>
+        </span>
+      </a>
 
-  <p>
-    TriFare is a GPS-assisted digital fare metering platform developed for
-    Kidapawan City tricycle operations. It combines automated fare computation,
-    passenger management, trip recovery, applicant onboarding, and operational
-    analytics into one mobile solution.
-  </p>
+      <p>
+        TriFare is a GPS-assisted digital fare metering platform developed for
+        Kidapawan City tricycle operations. It combines automated fare computation,
+        passenger management, trip recovery, applicant onboarding, and operational
+        analytics into one mobile solution.
+      </p>
 
-  <div class="footer-meta">
-    <span>Version 1.0.0 Public Beta</span>
-    <span>Flutter • Supabase • GitHub Pages</span>
-  </div>
+      <div class="footer-meta">
+        <span>Version 1.0.0 Public Beta</span>
+        <span>Flutter • Supabase • GitHub Pages</span>
+      </div>
 
-  <small>
-    Developed by Bryan James Caralos<br>
-    Bachelor of Science in Information Technology<br>
-    BSIT Capstone Project • 2026
-  </small>
-</footer>
+      <small>
+        Developed by Bryan James Caralos<br />
+        Bachelor of Science in Information Technology<br />
+        BSIT Capstone Project • 2026
+      </small>
+    </footer>
 
     <script src="script.js"></script>
   </body>

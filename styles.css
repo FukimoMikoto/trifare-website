@@ -384,3 +384,97 @@
   .carousel-btn.prev { left: 0; }
   .carousel-btn.next { right: 0; }
 }
+
+/* Phase 4.3 polish: download panel, QR card, footer, and version badge fixes */
+.download-panel{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:20px;
+  min-width:min(420px,100%);
+}
+
+.cta-copy{
+  max-width:620px;
+}
+
+.qr-card{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  width:100%;
+  max-width:430px;
+  margin-top:4px;
+  padding:18px;
+  border-radius:24px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 18px 50px rgba(0,0,0,.14);
+}
+
+.qr-card img{
+  width:120px;
+  height:120px;
+  border-radius:16px;
+  background:#fff;
+  padding:8px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+
+.qr-card strong{
+  display:block;
+  color:#fff;
+  font-size:1.1rem;
+  font-weight:900;
+}
+
+.qr-card p{
+  margin:6px 0 0;
+  color:rgba(255,255,255,.78);
+  line-height:1.5;
+}
+
+.footer-meta{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  font-weight:700;
+  color:var(--muted);
+}
+
+.footer small{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.version-badge .version{
+  color:#66d9ff;
+}
+
+.version-badge .status{
+  color:#fff;
+}
+
+@media (max-width:900px){
+  .download-panel{
+    align-items:flex-start;
+    width:100%;
+  }
+
+  .qr-card{
+    max-width:100%;
+  }
+
+  .footer-meta{
+    flex-direction:column;
+    gap:6px;
+  }
+}
+
+@media (max-width:560px){
+  .qr-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
