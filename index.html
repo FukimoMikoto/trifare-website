@@ -616,6 +616,318 @@
       </section>
     </main>
 
+    <!--
+  TriFare — New Sections
+  Drop these <section> blocks into index.html wherever you want them to
+  appear (e.g. between #applicant and #screens, or after #screens).
+  Add matching nav links in .nav-links if you want them in the top nav.
+  Requires the CSS in new-sections.css to be appended to styles.css.
+-->
+
+    <!-- ============ SYSTEM REQUIREMENTS ============ -->
+    <section id="requirements" class="requirements-section container">
+      <div class="section-heading center reveal">
+        <span class="eyebrow">System Requirements</span>
+        <h2>Built to run anywhere.</h2>
+        <p>
+          Minimum device and connectivity specs for drivers, admins, and
+          applicants.
+        </p>
+      </div>
+      <div class="req-grid reveal delay-1">
+        <article class="req-card">
+          <span class="req-icon">📱</span>
+          <h3>Mobile device</h3>
+          <p>Android 9.0 (Pie) or newer. Minimum 2 GB RAM recommended.</p>
+        </article>
+        <article class="req-card">
+          <span class="req-icon">📍</span>
+          <h3>GPS / Location</h3>
+          <p>Device GPS enabled with location permission granted to TriFare.</p>
+        </article>
+        <article class="req-card">
+          <span class="req-icon">📶</span>
+          <h3>Connectivity</h3>
+          <p>
+            Stable 3G/4G or Wi-Fi. Offline trip recovery covers brief drops.
+          </p>
+        </article>
+        <article class="req-card">
+          <span class="req-icon">💾</span>
+          <h3>Storage</h3>
+          <p>At least 150 MB free space for install and trip data.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ TECHNICAL SPECIFICATIONS ============ -->
+    <section id="specs" class="specs-section section-soft">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Technical Specifications</span>
+          <h2>Under the hood.</h2>
+          <p>
+            The stack powering TriFare's fare computation and operations
+            dashboard.
+          </p>
+        </div>
+        <div class="specs-grid reveal delay-1">
+          <div class="spec-row">
+            <dt>Frontend framework</dt>
+            <dd>Flutter</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Backend &amp; database</dt>
+            <dd>Supabase (PostgreSQL)</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Authentication</dt>
+            <dd>Supabase Auth, role-based access</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Distance calculation</dt>
+            <dd>Haversine formula via device GPS</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Fare engine</dt>
+            <dd>Base fare + per-100m excess rate, discount-aware</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Reporting</dt>
+            <dd>Server-side CSV / PDF generation</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Hosting (web)</dt>
+            <dd>GitHub Pages</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Distribution (Android)</dt>
+            <dd>Signed APK via GitHub Releases</dd>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECURITY FEATURES ============ -->
+    <section id="security" class="security-section container">
+      <div class="section-heading center reveal">
+        <span class="eyebrow">Security</span>
+        <h2>Trips and data, protected.</h2>
+        <p>
+          TriFare separates access by role and keeps trip records auditable.
+        </p>
+      </div>
+      <ul class="security-grid reveal delay-1">
+        <li>
+          <h3>Role-based access</h3>
+          <p>
+            Drivers, admins, and applicants each see only their own interface
+            and data.
+          </p>
+        </li>
+        <li>
+          <h3>Encrypted authentication</h3>
+          <p>
+            Sign-in is handled through Supabase Auth with hashed credentials.
+          </p>
+        </li>
+        <li>
+          <h3>Document verification</h3>
+          <p>
+            Applicant documents are reviewed and approved by admins before
+            activation.
+          </p>
+        </li>
+        <li>
+          <h3>Trip integrity checks</h3>
+          <p>
+            GPS jump filtering (max 80 m) and accuracy thresholds prevent fare
+            tampering via spoofed locations.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ VERSION HISTORY / CHANGELOG ============ -->
+    <section id="changelog" class="changelog-section section-dark">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow gold">Version History</span>
+          <h2>What's changed.</h2>
+          <p>
+            Full changelog and downloads are on
+            <a
+              href="https://github.com/FukimoMikoto/trifare-releases/releases"
+              target="_blank"
+              rel="noopener"
+              >GitHub Releases</a
+            >.
+          </p>
+        </div>
+        <ol class="changelog-list reveal delay-1">
+          <li class="changelog-item latest">
+            <div class="changelog-meta">
+              <span class="changelog-version">v1.0.2</span>
+              <span class="changelog-tag">Latest</span>
+              <span class="changelog-date">Jun 29, 2026</span>
+            </div>
+            <h3>GPS Freeze Fix</h3>
+            <p>
+              Fixed GPS readings appearing to freeze on low-end Android chipsets
+              (e.g. Mediatek/Unisoc) by removing hardware-level location
+              batching. Tightened accuracy filtering (50&nbsp;m → 30&nbsp;m) and
+              jump rejection (150&nbsp;m → 80&nbsp;m) to stop noisy reads from
+              inflating fares, and added a graceful timeout fallback for slow
+              cold starts.
+            </p>
+          </li>
+          <li class="changelog-item">
+            <div class="changelog-meta">
+              <span class="changelog-version">v1.0.1.1</span>
+              <span class="changelog-date">Jun 29, 2026</span>
+            </div>
+            <h3>Version number fix</h3>
+            <p>
+              Corrected the About screen, which was still displaying v1.0.0
+              instead of v1.0.1.
+            </p>
+          </li>
+          <li class="changelog-item">
+            <div class="changelog-meta">
+              <span class="changelog-version">v1.0.1</span>
+              <span class="changelog-date">Jun 29, 2026</span>
+            </div>
+            <h3>Bug fixes</h3>
+            <p>
+              Fixed fare calculation across all passenger types, corrected GPS
+              last-location restoration, and fixed multi-passenger recovery
+              after app restart.
+            </p>
+          </li>
+        </ol>
+        <div class="changelog-cta reveal delay-2">
+          <a
+            class="btn ghost"
+            href="https://github.com/FukimoMikoto/trifare-releases/releases"
+            target="_blank"
+            rel="noopener"
+            >View Full Changelog</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="faq-section container">
+      <div class="section-heading center reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Frequently asked questions.</h2>
+      </div>
+      <div class="faq-list reveal delay-1">
+        <details class="faq-item" open>
+          <summary>Does TriFare work without internet?</summary>
+          <p>
+            Yes, trip tracking and fare computation work offline. Trips are
+            recovered automatically if the app closes or the connection drops,
+            and sync to the server once a connection is available.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>How is the fare calculated?</summary>
+          <p>
+            TriFare uses a base fare for the first 3.75&nbsp;km, plus ₱0.40 per
+            additional 100&nbsp;meters (₱4.00/km). Discounted passenger types
+            (Student, Senior, PWD, Child) are applied automatically.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Can drivers set a custom fare?</summary>
+          <p>
+            Yes. Custom / Exclusive Ride lets a driver agree on a fixed fare
+            with a passenger while still recording distance, duration, and trip
+            history for reporting.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I become a driver on TriFare?</summary>
+          <p>
+            Register an applicant account, fill out the driver application,
+            upload required documents, and track your review status from the
+            app. Admins approve applications before driver access is granted.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>Is TriFare available on iOS?</summary>
+          <p>
+            Not currently. TriFare is distributed as an Android APK via GitHub
+            Releases during this pilot/capstone phase.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ MEET THE DEVELOPERS ============ -->
+    <section id="team" class="team-section section-soft">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">The Team</span>
+          <h2>Meet the developer.</h2>
+          <p>
+            TriFare is a BSIT capstone project built and maintained by a single
+            developer.
+          </p>
+        </div>
+        <div class="team-grid reveal delay-1">
+          <article class="team-card">
+            <img
+              class="team-avatar"
+              src="assets/team/11.jpg"
+              alt="Bryan James Caralos"
+            />
+            <h3>Bryan James Caralos</h3>
+            <span class="team-role">Developer &amp; Researcher</span>
+            <p>
+              Designed and built TriFare end-to-end — Flutter app, Supabase
+              backend, fare engine, and admin dashboard.
+            </p>
+            <a
+              class="team-link"
+              href="https://github.com/FukimoMikoto"
+              target="_blank"
+              rel="noopener"
+              >GitHub ↗</a
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / SUPPORT ============ -->
+    <section id="support" class="support-section">
+      <div class="container support-card reveal">
+        <div class="support-copy">
+          <span class="eyebrow">Support</span>
+          <h2>Need help with TriFare?</h2>
+          <p>
+            Report a bug, request a feature, or ask a question about the app or
+            this capstone project.
+          </p>
+        </div>
+        <div class="support-actions">
+          <a
+            class="btn primary"
+            href="https://github.com/FukimoMikoto/trifare-releases/issues"
+            target="_blank"
+            rel="noopener"
+            >Report an Issue</a
+          >
+          <a class="btn ghost" href="mailto:support@example.com"
+            >Email Support</a
+          >
+        </div>
+      </div>
+    </section>
+
     <footer class="footer container">
       <a class="brand" href="#top">
         <img
