@@ -235,6 +235,7 @@ if (heroImg && heroDots) {
 // ============================================================
 const CHANGELOG_REPO = 'FukimoMikoto/trifare-releases';
 const CHANGELOG_API = `https://api.github.com/repos/${CHANGELOG_REPO}/releases`;
+const CHANGELOG_MAX_ITEMS = 3; // show only the N most recent releases; full history stays on GitHub
 const changelogList = $('#changelogList');
 
 function escapeHtml(str) {
@@ -298,7 +299,7 @@ async function loadChangelog() {
     if (!res.ok) throw new Error(`GitHub API responded ${res.status}`);
     const releases = (await res.json()).filter(r => !r.draft);
     if (!releases.length) throw new Error('No published releases found');
-    renderChangelog(releases);
+    renderChangelog(releases.slice(0, CHANGELOG_MAX_ITEMS));
   } catch (err) {
     // Silent, graceful fallback: the static <li> items already
     // written in index.html remain exactly as-is.
