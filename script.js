@@ -225,3 +225,85 @@ if (heroImg && heroDots) {
   setHeroSlide(0);
   window.setInterval(() => setHeroSlide(heroSlideIndex + 1), 6200);
 }
+
+// ============================================================
+// Auto Version History (GitHub Releases API)
+// Populates #changelogList with the live release feed from
+// github.com/FukimoMikoto/trifare-releases. On any failure the
+// existing static <li> markup already in index.html is left
+// untouched, acting as a graceful fallback.
+// ============================================================
+const CHANGELOG_REPO = 'FukimoMikoto/trifare-releases';
+const CHANGELOG_API = `https://api.github.com/repos/${CHANGELOG_REPO}/releases`;
+const changelogList = $('#changelogList');
+
+function escapeHtml(str) {
+  return str.replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[ch]));
+}
+
+// Minimal markdown → HTML for release notes bodies (bullets, bold, paragraphs)
+function formatReleaseBody(body) {
+  if (!body || !body.trim()) return '<p>No release notes provided.</p>';
+  const lines = escapeHtml(body.trim()).split('\n');
+  let html = '', inList = false;
+  lines.forEach(line => {
+    const bullet = line.match(/^[-*]\s+(.*)/);
+    if (bullet) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${bullet[1]}</li>`;
+    } else {
+      if (inList) { html += '</ul>'; inList = false; }
+      if (line.trim()) html += `<p>${line}</p>`;
+    }
+  });
+  if (inList) html += '</ul>';
+  return html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
+function formatReleaseDate(iso) {
+  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+function renderChangelog(releases) {
+  if (!changelogList) return;
+  changelogList.innerHTML = releases.map((rel, i) => {
+    const version = rel.tag_name || rel.name || 'Release';
+    const title = rel.name && rel.name !== rel.tag_name ? rel.name : version;
+    const assets = (rel.assets || []).filter(a => a.browser_download_url);
+    const assetLinks = assets.length
+      ? `<p class="changelog-assets">${assets.map(a =>
+          `<a href="${a.browser_download_url}" target="_blank" rel="noopener">${escapeHtml(a.name)}</a>`
+        ).join(' &middot; ')}</p>`
+      : '';
+    return `
+      <li class="changelog-item${i === 0 ? ' latest' : ''}">
+        <div class="changelog-meta">
+          <span class="changelog-version">${escapeHtml(version)}</span>
+          ${i === 0 ? '<span class="changelog-tag">Latest</span>' : ''}
+          <span class="changelog-date">${formatReleaseDate(rel.published_at)}</span>
+        </div>
+        <h3>${escapeHtml(title)}</h3>
+        ${formatReleaseBody(rel.body)}
+        ${assetLinks}
+      </li>`;
+  }).join('');
+}
+
+async function loadChangelog() {
+  if (!changelogList) return;
+  try {
+    const res = await fetch(CHANGELOG_API);
+    if (!res.ok) throw new Error(`GitHub API responded ${res.status}`);
+    const releases = (await res.json()).filter(r => !r.draft);
+    if (!releases.length) throw new Error('No published releases found');
+    renderChangelog(releases);
+  } catch (err) {
+    // Silent, graceful fallback: the static <li> items already
+    // written in index.html remain exactly as-is.
+    console.warn('Changelog: using static fallback —', err.message);
+  }
+}
+
+loadChangelog();
