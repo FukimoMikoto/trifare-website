@@ -6,6 +6,15 @@ window.addEventListener('scroll', () => {
   $('.nav').classList.toggle('scrolled', window.scrollY > 18);
 });
 
+// Brand logo: force a reliable scroll-to-top on click.
+// (href="#top" is kept in the HTML as a no-JS fallback, but since the
+// header itself is position:sticky at top:0, anchor-jumping to its own
+// id can be unreliable across browsers — this guarantees the behavior.)
+$('.brand')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // Reveal animation
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
